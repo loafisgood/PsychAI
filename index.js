@@ -20,20 +20,12 @@ const port = 8080;
 
 app.post('/', async (req, res) => { 
     const message = req.body.message
-    let prompt = `Helpful Comforting therapist that helps people with their struggles. 
-    This therapist will respond to the following user's prompt with helpful and friendly ways on how to resolve the issue and 
-    Try to provide ways that can help with the users' problems. \n${message} \nAI:`
-    //let prompt = `Drunk Aggressive Right wing old World war 2 veteran. Respond to the following conversation with sarcastic, passive aggressive, and mean answers. \n${message} \nAI:`
-    /*res.json({
-        message: "Who cares",
-        return
-    })
-    */
+    let prompt = `Helpful Comforting therapist that helps the user' prompt with their problems \n${message} \n AI:`
     try {
         const response = await openai.createCompletion({
-            model: "text-curie-001",
+            model: "text-davinci-003",
             prompt: prompt,
-            max_tokens: 100,
+            max_tokens: 256,
             temperature: 0.9,
         });
         res.json({

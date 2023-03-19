@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { extendTheme, ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import {BrowserRouter , Routes , Route} from 'react-router-dom'
 import Login from './components/Login'
 import Chatbox from './components/Chatbox'
-import Text from './components/Text'
 
 
 
@@ -22,7 +20,6 @@ root.render(
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/chatbox" element={<Chatbox/>} />
-        <Route path="/text" element={<Text/>} />
 
 
       </Routes>
