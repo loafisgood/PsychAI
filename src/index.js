@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react'
-import {BrowserRouter , Routes , Route} from 'react-router-dom'
+import {HashRouter, Routes , Route} from 'react-router-dom'
 import Login from './components/Login'
 import Chatbox from './components/Chatbox'
 
@@ -16,14 +16,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <ChakraProvider>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/chatbox" element={<Chatbox/>} />
-
-
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </ChakraProvider>
 );
 
